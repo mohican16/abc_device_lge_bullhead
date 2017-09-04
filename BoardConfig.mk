@@ -19,12 +19,14 @@ TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a53
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53.a57
+
 
 ENABLE_CPUSETS := true
 
@@ -109,7 +111,7 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
+  ifneq ($(TARGET_BUILD_VARIANT),userdebug)
     ifeq ($(WITH_DEXPREOPT),)
       WITH_DEXPREOPT := true
     endif
@@ -163,6 +165,9 @@ NXP_CHIP_TYPE := 2
 TARGET_PER_MGR_ENABLED := true
 
 USE_CLANG_PLATFORM_BUILD := true
+
+# Enable workaround for slow rom flash
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 TARGET_FS_CONFIG_GEN += device/lge/bullhead/config.fs
 
