@@ -39,6 +39,6 @@ PRODUCT_PACKAGES += \
     WallpaperPicker
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	  PRODUCT_NAME=bullhead \
-	  BUILD_FINGERPRINT="google/bullhead/bullhead:8.0.0/OPR4.170623.006/4286358:user/test-keys" \
-    PRIVATE_BUILD_DESC="bullhead-user 8.0.0 OPR4.170623.006 4286358 release-keys"
+    PRODUCT_NAME=bullhead \
+    BUILD_FINGERPRINT="google/bullhead/bullhead:8.0.0/OPR4.170623.009/4302492:user/test-keys" \
+    PRIVATE_BUILD_DESC="bullhead-user 8.0.0 OPR4.170623.009 4302492 release-keys"
